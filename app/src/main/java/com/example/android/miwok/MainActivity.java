@@ -21,6 +21,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Create a new intent to open the {@link FamilyActivity}
+                Toast.makeText(view.getContext(),
+                        "Open this family", Toast.LENGTH_SHORT).show();
                 Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
 
                 // Start the new activity
@@ -94,5 +97,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(phrasesIntent);
             }
         });
+
+    }
+    public void openNumbers2List(View view) {
+        Intent intent = new Intent(MainActivity.this,NumbersActivity2.class);
+        startActivity(intent);
+    }
+
+    public void opentestActivity(View view) {
+        Intent intent = new Intent(MainActivity.this,TestActivity.class);
+        startActivity(intent);
     }
 }

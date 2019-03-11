@@ -46,4 +46,18 @@
         android:background="@color/category_phrases"
         android:text="@string/category_phrases" />
 
+    <TextView
+        android:id="@+id/numbers2"
+        style="@style/CategoryStyle"
+        android:background="@color/category_numbers2"
+        android:text="@string/category_numbers2"
+        android:onClick="openNumbers2List"/>
+
+    <TextView
+        android:id="@+id/testActivity"
+        style="@style/CategoryStyle"
+        android:background="@color/category_phrases"
+        android:onClick="opentestActivity"
+        android:text="opentestActivity" />
+
 </LinearLayout>
