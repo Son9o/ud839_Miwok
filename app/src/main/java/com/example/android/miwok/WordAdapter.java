@@ -2,6 +2,7 @@ package com.example.android.miwok;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -29,7 +31,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         mColorResourceId = colorResourceId;
     }
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable View convertView, @NonNull final ViewGroup parent) {
             // Check if the existing view is being reused, otherwise inflate the view
             View listItemView = convertView;
             if(listItemView == null) {
@@ -37,8 +39,22 @@ public class WordAdapter extends ArrayAdapter<Word> {
                         R.layout.list_item, parent, false);
             }
 
-            // Get the {@link AndroidFlavor} object located at this position in the list
-            Word currentposition = getItem(position);
+            // Get the {@link} object located at this position in the list
+            final Word currentposition = getItem(position);
+
+            //playes sound recording on list item click
+/*
+                if(currentposition.getAudiResourceId() != 0) {
+                    listItemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            MediaPlayer wordsayer2 = MediaPlayer.create(getContext(), currentposition.getAudiResourceId());
+                            wordsayer2.start();
+
+                        }
+                    });
+            }
+*/
 
             // Find the TextView in the list_item.xml layout with the ID version_name
             TextView nameTextView = (TextView) listItemView.findViewById(R.id.text2);
@@ -63,12 +79,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
                 iconView.setImageResource(R.drawable.family_younger_brother);
                 iconView.setVisibility(View.GONE);
             }
-        // Set the theme color for the list item
-        View textContainer = listItemView.findViewById(R.id.text_container);
-        // Find the color that the resource ID maps to
-        int color = ContextCompat.getColor(getContext(), mColorResourceId);
-        // Set the background color of the text container View
-        textContainer.setBackgroundColor(color);
+            // Set the theme color for the list item
+            View textContainer = listItemView.findViewById(R.id.text_container);
+            // Find the color that the resource ID maps to
+            int color = ContextCompat.getColor(getContext(), mColorResourceId);
+            // Set the background color of the text container View
+            textContainer.setBackgroundColor(color);
+
 
 
             // Return the whole list item layout (containing 2 TextViews and an ImageView)

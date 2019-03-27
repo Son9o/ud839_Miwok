@@ -30,6 +30,8 @@ public class Word {
     // Image id for the word
     private int mImageResourceId;
 
+    // audio file reousrce id
+    private int mAudioResourceId;
     /**
      * Create a new Word object.
      *
@@ -44,10 +46,12 @@ public class Word {
         //mImageResourceId = imageResourceId;
     }
 
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
+
     }
 
     /**
@@ -67,4 +71,6 @@ public class Word {
     public int getImageResourceId() {
         return mImageResourceId;
     }
+
+    public int getAudiResourceId() { return mAudioResourceId; }
 }
