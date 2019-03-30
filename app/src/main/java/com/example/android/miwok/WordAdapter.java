@@ -42,7 +42,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
             // Get the {@link} object located at this position in the list
             final Word currentposition = getItem(position);
 
-            //playes sound recording on list item click
+            //playes sound recording on list item click from word adapter
 /*
                 if(currentposition.getAudiResourceId() != 0) {
                     listItemView.setOnClickListener(new View.OnClickListener() {
