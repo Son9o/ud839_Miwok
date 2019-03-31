@@ -60,7 +60,6 @@ public class NumbersActivity extends AppCompatActivity {
     MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mediaPlayer) {
-            Toast.makeText(getApplicationContext(), "i am mad now", Toast.LENGTH_LONG).show();
             releaseMediaPlayer();
         }
     };

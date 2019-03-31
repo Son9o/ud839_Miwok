@@ -16,6 +16,7 @@
 package com.example.android.miwok;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -65,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(familyIntent);
             }
         });
+
+/*      ripple on click effect in code
+        int[] attrs = new int[]{R.attr.selectableItemBackground};
+        TypedArray typedArray = MainActivity.this.obtainStyledAttributes(attrs);
+        int backgroundResource = typedArray.getResourceId(0, 0);
+        family.setBackgroundResource(backgroundResource);*/
 
         // Find the View that shows the colors category
         TextView colors = (TextView) findViewById(R.id.colors);

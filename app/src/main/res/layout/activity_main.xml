@@ -22,17 +22,27 @@
     android:orientation="vertical"
     tools:context="com.example.android.miwok.MainActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/category_numbers">
     <TextView
         android:id="@+id/numbers"
         style="@style/CategoryStyle"
-        android:background="@color/category_numbers"
+        android:background="?android:attr/selectableItemBackground"
         android:text="@string/category_numbers" />
+    </FrameLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/category_family">
     <TextView
         android:id="@+id/family"
         style="@style/CategoryStyle"
-        android:background="@color/category_family"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:text="@string/category_family" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/colors"
